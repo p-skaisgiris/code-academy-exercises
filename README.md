@@ -1,1 +1,1 @@
-# code-academy-exercises
+# CodeAcademy Python exercises

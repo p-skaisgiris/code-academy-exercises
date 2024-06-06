@@ -5,27 +5,27 @@
 
 Database schema (note the `students_lectures' auxiliary table, which allows for a Many2Many relationship between students and lectures):
 
-![asd](read_program_schema.jpg)
+![asd](students-db-schema.jpg)
 
 ## Step-by-step
 
 ### Correct Flask project structure
 - We create a new project directory `students_flask_project`
-- We create a new module: a new directory `students_flask` ​​and a `__init__.py` file in it
-- We create other flask `.py` files and put them in the `students_flask` ​​module
+- We create a new module: a new directory `students_flask` and a `__init__.py` file in it
+- We create other flask `.py` files and put them in the `students_flask` module
 - We create a `run.py` file, which will be a very minimal startup file
 - The final structure should look like this:
 ```bash
 .
-├── run.py # File used to run the project (app.run)
-└── students_flask/ # Our project module
- ├── forms.py # Form classes (code similar to models.py)
- ├── __init__.py # File with Flask configuration (app, db variables)
- ├── models.py # Database models (code similar to forms.py)
- ├── routes.py # Routes and their logic (displaying templates, sending data to templates and to DB)
- └── templates/ # HMTL code that will be displayed in the browser; what the user will see
- ├── base.html # Base HTML template from which all other templates inherit structure (eg navbar)
- └── index.html # The HMTL code of the main site
+├── run.py            # File used to run the project (app.run)
+└── students_flask/   # Our project module
+ ├── forms.py         # Form classes (code similar to models.py)
+ ├── __init__.py      # File with Flask configuration (app, db variables)
+ ├── models.py        # Database models (code similar to forms.py)
+ ├── routes.py        # Routes and their logic (displaying templates, sending data to templates and to DB)
+ └── templates/       # HMTL code that will be displayed in the browser; what the user will see
+     ├── base.html    # Base HTML template from which all other templates inherit structure (eg navbar)
+     └── index.html   # The HMTL code of the main site
 ```
 
 ### Getting ready for Flask and SQLAlchemy

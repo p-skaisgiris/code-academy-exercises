@@ -1,11 +1,11 @@
 # Užduotis
-- Sukurti Flask programą, kuri leistų išsaugoti studentus, dėstytojus ir paskaitas 
+- Sukurti Flask programą, kuri leistų išsaugoti studentus, dėstytojus ir paskaitas
 - Kiekvienam dėstytojui leistų priskirti jo paskaitas (one2many ryšys)
 - Kiekvienam studentui leistų priskirti daug paskaitų (many2many ryšys)
 
 Duomenų bazės schema (atreipkite dėmesį į `studentai_paskaitos` pagalbinę lentelę, kuri leidžia padaryti Many2Many ryšį tarp studentų ir paskaitų):
 
-![asd](paskaitu_programos_schema.jpg)
+![asd](students-db-schema.jpg)
 
 ## Step-by-step
 
@@ -68,7 +68,7 @@ Duomenų bazės schema (atreipkite dėmesį į `studentai_paskaitos` pagalbinę 
 - `LectureForm`
   - title: StringField, DataRequired validatorius
   - students: QuerySelectMultipleField
-  - professor: QuerySelectField 
+  - professor: QuerySelectField
   - submit: SubmitField
 - `ProfessorForm`
   - name: StringField, DataRequired validatorius
@@ -89,8 +89,8 @@ Duomenų bazės schema (atreipkite dėmesį į `studentai_paskaitos` pagalbinę 
   - Visus naujai sukurtus duomenis pridedame į duomenų bazės redagavimo sesiją pvz. `db.session.add(new_professor)`
   - Įrašome duomenis į duomenų bazę: `db.session.commit()`
   - Dažniausiai šiuo metu redirectinam į puslapį, kuriame būtų galima pamatyti naujų duomenų pasikeitimus (pvz. `redirect(url_for('professors'))`)
-  - Atvaizduojame formą, jei ši funkcija negavo POST metodo. Pvz. `return render_template("add_professor.html", form=form)` 
-- Sukurti `delete_professor`, `delete_student`, `delete_lecture` maršrutų funkcijas 
+  - Atvaizduojame formą, jei ši funkcija negavo POST metodo. Pvz. `return render_template("add_professor.html", form=form)`
+- Sukurti `delete_professor`, `delete_student`, `delete_lecture` maršrutų funkcijas
   - Maršrutas turės ID kintamuosius jame, pvz. "/delete_professor/\<int:id\>" ir todėl python funckija turės argumentą id: `def delete_professor(id):`
   - Su šia funkcija ištrinsime pasirinkto objektą iš duomenų bazės
   - Pirma, gauname specifinį objektą iš duomenų bazės. Pvz., jei esame `delete_professor` funkcijoje `res = Professor.query.get(id)`
